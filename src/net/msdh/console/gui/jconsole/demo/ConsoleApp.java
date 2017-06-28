@@ -9,13 +9,11 @@ public class ConsoleApp {
     	JConsole jc=new JConsole(40,20);
     	jc.setCursorVisible(true);
 
-        //jc.writeln("0123");
-
         jc.writeln("000000");
         jc.writeln("111111");
         jc.writeln("222222");
-        jc.writeln("33333");
-        jc.writeln("44444");
+        jc.writeln("333333");
+        jc.writeln("444444");
         jc.writeln("555555");
         jc.writeln("666666");
         jc.writeln("777777");
