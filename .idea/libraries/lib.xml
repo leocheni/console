@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/lib/j3dutils.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/j3dcore.jar!/" />
       <root url="jar://$PROJECT_DIR$/../Home3D/out/artifacts/Home3D/Home3D.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JTConsole/out/artifacts/JTConsole/JTConsole.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

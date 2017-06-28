@@ -1,6 +1,6 @@
 package net.msdh.console.gui;
 
-import net.msdh.console.gui.jconsole.ConsoleAction;
+import net.msdh.jtconsole.ConsoleAction;
 import net.msdh.console.utils.Utils;
 import sun.misc.JavaAWTAccess;
 
@@ -94,24 +94,69 @@ public class Display extends JFrame{
   }
 
   public int SetConsoleLine(int win, String message, char type){
+    Color fg = null;
+    Color bg = null;
     if(win==0){
-      //consoleTab.getMain().setText(consoleTab.getMain().getText()+"\r\n"+message);
-      consoleTab.getMain().writeln(message);
-
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
-        //consoleTab.getMain().setText(message);
+        switch(type){
+                  case 'i':{
+                    fg = Color.GRAY;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'w':{
+                    fg = Color.ORANGE;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'e':{
+                    fg = Color.RED;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                }
+       consoleTab.getMain().writeln(message,fg,bg);
     }
     else if(win==1){
-      //consoleTab.getInfo().setText(consoleTab.getInfo().getText()+"\r\n"+message);
-      consoleTab.getInfo().writeln(message);
+        switch(type){
+                  case 'i':{
+                    fg = Color.GRAY;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'w':{
+                    fg = Color.ORANGE;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'e':{
+                    fg = Color.RED;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                }
+
+       consoleTab.getInfo().writeln(message,fg,bg);
     }
     else if(win==2){
-      //consoleTab.getStatus().setText(consoleTab.getStatus().getText()+"\r\n"+message);
-      consoleTab.getStatus().writeln(message);
+        switch(type){
+                  case 'i':{
+                    fg = Color.GRAY;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'w':{
+                    fg = Color.ORANGE;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                  case 'e':{
+                    fg = Color.RED;
+                    bg = Color.BLACK;
+                    break;
+                  }
+                }
+
+      consoleTab.getStatus().writeln(message,fg,bg);
     }
     return 0;
   }

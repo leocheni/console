@@ -6,15 +6,13 @@ import net.msdh.console.base.Command;
 import net.msdh.console.base.Queue;
 import net.msdh.console.gui.Display;
 import net.msdh.console.gui.View;
-import net.msdh.console.gui.jconsole.ConsoleAction;
 import net.msdh.console.net.Connection;
 import net.msdh.console.utils.Log;
+import net.msdh.jtconsole.ConsoleAction;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -66,52 +64,8 @@ public class Console {
           catch (JSONRPC2ParseException e1) {
             Display.getInstance().SetConsoleLine(0, "CONSOLE::Ошибка обработки ответа: " + e1, 'e');
           }
-        //cmdLine="";
         }
     }
-
-
-//    class MainKeyListener implements KeyListener {
-//
-//    public void keyTyped(KeyEvent e){}
-//
-//    public void keyPressed(KeyEvent e){
-//      String answer;
-//      if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-//        try{
-//          queue.cmdParser(cmdLine);
-//          if(cmdValidator(queue.getCommand())){
-//            connect.Send(coreIP, corePort,queue.getCommand().toJson());
-//            answer = connect.ReadClient();
-//            Display.getInstance().SetConsoleLine(0, answer, 'i');
-//            Display.getInstance().SetConsoleLine(0, View.Command(answer), 'i');
-//          }
-//        }
-//        catch (IOException e1) {
-//          Display.getInstance().SetConsoleLine(0, "CONSOLE::Ошибка отправки данных: " + e1, 'e');
-//        }
-//        catch (JSONRPC2ParseException e1) {
-//          Display.getInstance().SetConsoleLine(0, "CONSOLE::Ошибка обработки ответа: " + e1, 'e');
-//        }
-//        cmdLine="";
-//      }
-//      else{
-//        if((e.getKeyCode()!= KeyEvent.VK_SHIFT)&&
-//           (e.getKeyCode()!= KeyEvent.VK_BACK_SPACE)&&
-//            (e.getKeyCode()!= KeyEvent.VK_DOWN)&&
-//            (e.getKeyCode()!= KeyEvent.VK_LEFT)&&
-//            (e.getKeyCode()!= KeyEvent.VK_RIGHT)&&
-//            (e.getKeyCode()!= KeyEvent.VK_UP)){
-//          cmdLine+=e.getKeyChar();
-//
-//          //SetLine(1, KeyEvent.getKeyText(e.getKeyCode()),'i');
-//          System.out.print(cmdLine);
-//          Display.getInstance().SetConsoleLine(1, cmdLine, 'i');
-//        }
-//      }
-//    }
-//    public void keyReleased(KeyEvent e){}
-//  }
 
   class ExitButtonListener implements ActionListener{
       public void actionPerformed(ActionEvent e) {
@@ -126,10 +80,7 @@ public class Console {
     consoleReciver = new ConsoleReciver(Thread.NORM_PRIORITY,"ConsoleReciver");
     consoleReciver.start();
 
-    //Display.getInstance().addConsoleKeyListener(new MainKeyListener());
-
     Display.getInstance().addExitButtonListener(new ExitButtonListener());
-
     Display.getInstance().addConsoleListener(new ConsoleListener());
 
     Map<String,Object> params = new HashMap<String, Object>();

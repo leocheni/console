@@ -1,6 +1,6 @@
 package net.msdh.console.gui;
 
-import net.msdh.console.gui.jconsole.JConsole;
+import net.msdh.jtconsole.JTConsole;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,9 +16,9 @@ import java.awt.event.KeyListener;
 public class ConsoleTab extends JPanel {
 
 
-  private JConsole main;
-  private JConsole info;
-  private JConsole status;
+  private JTConsole main;
+  private JTConsole info;
+  private JTConsole status;
 
   private int height;
   private int width;
@@ -27,20 +27,16 @@ public class ConsoleTab extends JPanel {
     this.width = width;
     this.height = height;
 
-  //  main = new JTextArea();
-  //  scrollmain=new JScrollPane(main);
-
-    //main = new JConsole(60,24);
-    main = new JConsole(60,24);
+    main = new JTConsole(60,24);
     main.setFocusable(true);
     main.setCursorVisible(true);
-    main.write("Hello World\n",Color.GREEN,Color.BLACK);
+    main.writeln("Welcome to MSDH",Color.GREEN,Color.BLACK);
 
-    info = new JConsole(34,34);
-    info.write("Info\n", Color.GREEN, Color.BLACK);
+    info = new JTConsole(34,34);
+    info.writeln("Info", Color.GREEN, Color.BLACK);
 
-    status = new JConsole(60,10);
-    status.write("Status\n", Color.GREEN, Color.BLACK);
+    status = new JTConsole(60,10);
+    status.writeln("Status", Color.GREEN, Color.BLACK);
 
     this.setPreferredSize(new Dimension(410, 50));
     this.setLayout(null);
@@ -57,7 +53,7 @@ public class ConsoleTab extends JPanel {
 
   }
 
-  public JConsole getMain() {
+  public JTConsole getMain() {
     return main;
   }
 
@@ -65,11 +61,11 @@ public class ConsoleTab extends JPanel {
 //    return main;
 //  }
 
-  public JConsole getInfo() {
+  public JTConsole getInfo() {
         return info;
   }
 
-  public JConsole getStatus() {
+  public JTConsole getStatus() {
         return status;
   }
 

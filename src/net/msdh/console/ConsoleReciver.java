@@ -30,10 +30,9 @@ public class ConsoleReciver implements Runnable{
     public void run(){
 
     Display.getInstance().SetConsoleLine(2,"ConsoleReciver start",'i');
-    //console.SetLine(2,"ConsoleReciver start",'i');
 
     Connection p = new Connection();
-    Queue q = new Queue();
+   // Queue q = new Queue();
     try{
       p.Listen(60001);
 
