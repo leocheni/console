@@ -46,17 +46,22 @@ public class Console {
         @Override
         public void onLine(String line) {
 
-          System.out.print("Console::consoleAction");
+         // System.out.print("Console::consoleAction");
           String answer;
           try{
-            queue.cmdParser(line);
+            queue.cmdParser(line); ///todo переделать на объекты из ядра
 
             if(cmdValidator(queue.getCommand())){
+              sendStatus();
               connect.Send(coreIP, corePort,queue.getCommand().toJson());
               answer = connect.ReadClient();
               Display.getInstance().SetConsoleLine(0, answer, 'i');
               Display.getInstance().SetConsoleLine(0, View.Responce(answer), 'i');
+
             }
+
+            int lines = Display.getInstance().getConsoleLine(0);
+            Display.getInstance().SetConsoleLine(1,"Lines: " + lines , 'i');
           }
           catch (IOException e1) {
             Display.getInstance().SetConsoleLine(0, "CONSOLE::Ошибка отправки данных: " + e1, 'e');
@@ -91,18 +96,19 @@ public class Console {
 
     try{
       connect.Send(coreIP,corePort,new Command("mod",params,1).toJson());
-      String answer = connect.ReadClient();
-      Display.getInstance().SetConsoleLine(2, View.Responce(answer), 'i');
+      //String answer = connect.ReadClient();
+      //Display.getInstance().SetConsoleLine(2, View.Responce(answer), 'i');
       connect.CloseClient();
     }
     catch(IOException e){
       Log.getInstance().E("Console::Load",e.getMessage());
-      Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'i');
+      Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'e');
     }
-    catch (JSONRPC2ParseException e) {
-      Log.getInstance().E("Console::Loads",e.getMessage());
-      Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'i');
-    }
+
+//    catch (JSONRPC2ParseException e) {
+//      Log.getInstance().E("Console::Loads",e.getMessage());
+//      Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'e');
+//    }
     return 0;
   }
 
@@ -279,5 +285,25 @@ public class Console {
     }
     return 0;
   }
+
+  public void sendStatus(){
+
+    Map<String,Object> params = new HashMap<>();
+    params.put("item","console");
+    params.put("action","set");
+    params.put("param","status");
+    params.put("value","up");
+
+    try {
+      connect.Send(coreIP,corePort,new Command("mod",params,1).toJson());
+      connect.CloseClient();
+    }
+    catch (IOException e) {
+      Log.getInstance().E("Console.SendStatus: ",e.getMessage());
+    }
+
+
+  }
+
 
 }

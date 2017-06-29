@@ -93,6 +93,10 @@ public class Display extends JFrame{
     System.out.println("display constructor exit");
   }
 
+  public int getConsoleLine(int win){
+      return consoleTab.getMain().getLinesSize();
+  }
+
   public int SetConsoleLine(int win, String message, char type){
     Color fg = null;
     Color bg = null;

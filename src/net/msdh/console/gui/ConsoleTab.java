@@ -15,20 +15,21 @@ import java.awt.event.KeyListener;
  */
 public class ConsoleTab extends JPanel {
 
-
   private JTConsole main;
   private JTConsole info;
   private JTConsole status;
 
-  private int height;
-  private int width;
+//  private int height;
+//  private int width;
 
   public ConsoleTab(int width,int height) {
-    this.width = width;
-    this.height = height;
+//    this.width = width;
+//    this.height = height;
 
     main = new JTConsole(60,24);
+
     main.setFocusable(true);
+
     main.setCursorVisible(true);
     main.writeln("Welcome to MSDH",Color.GREEN,Color.BLACK);
 
@@ -40,8 +41,8 @@ public class ConsoleTab extends JPanel {
 
     this.setPreferredSize(new Dimension(410, 50));
     this.setLayout(null);
-    int w = (int) ((width-30)*0.75);
-    int h = (int) ((height-80)*0.75);
+    //int w = (int) ((width-30)*0.75);
+    //int h = (int) ((height-80)*0.75);
 
     main.setBounds(5, 5, main.width,main.height);
     status.setBounds(5,main.height + 10, status.width, status.height);
@@ -56,10 +57,6 @@ public class ConsoleTab extends JPanel {
   public JTConsole getMain() {
     return main;
   }
-
-//  public JTextArea getMain() {
-//    return main;
-//  }
 
   public JTConsole getInfo() {
         return info;

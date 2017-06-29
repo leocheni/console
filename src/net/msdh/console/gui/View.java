@@ -68,12 +68,15 @@ public class View {
 
       reqIn = JSONRPC2Request.parse(c);
       resultString = reqIn.getID().toString();
-      resultString = resultString + reqIn.getMethod();
+      resultString = "id: " + resultString + " method: " + reqIn.getMethod();
+
 
       Map<String,Object> params = reqIn.getNamedParams();
-
-      for(Map.Entry<String,Object> entry : params.entrySet()){
-        resultString = resultString + entry.getKey()+":"+entry.getValue()+"\r\n";
+      if(params!=null){
+        resultString = resultString + "\nParams:\n";
+        for(Map.Entry<String,Object> entry : params.entrySet()){
+          resultString = resultString + entry.getKey()+":"+entry.getValue()+"\r\n";
+        }
       }
       //resultString = resultString + "==============\r\n";
       return resultString;

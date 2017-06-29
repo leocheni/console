@@ -18,7 +18,7 @@ public class Main {
   public static void main(String[] argv) {
     try {
 
-
+      ///todo переделать все на NetClient NetServer
       System.out.println("start");
 
       Log.getInstance().setLevel("DEBUG");
