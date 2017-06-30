@@ -31,12 +31,16 @@ public class ConsoleTab extends JPanel {
     main.setFocusable(true);
 
     main.setCursorVisible(true);
+    main.setReadOnly(false);
     main.writeln("Welcome to MSDH",Color.GREEN,Color.BLACK);
 
+
     info = new JTConsole(34,34);
+    info.setReadOnly(true);
     info.writeln("Info", Color.GREEN, Color.BLACK);
 
     status = new JTConsole(60,10);
+    status.setReadOnly(true);
     status.writeln("Status", Color.GREEN, Color.BLACK);
 
     this.setPreferredSize(new Dimension(410, 50));
