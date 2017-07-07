@@ -10,7 +10,7 @@ import com.sun.j3d.utils.behaviors.mouse.MouseWheelZoom;
 import com.sun.j3d.utils.image.TextureLoader;
 import com.sun.j3d.utils.pickfast.PickCanvas;
 import com.sun.j3d.utils.universe.SimpleUniverse;
-import net.msdh.console.net.Connection;
+
 
 import javax.media.j3d.*;
 import javax.vecmath.Color3f;
@@ -328,14 +328,14 @@ public class Home3Dold extends MouseAdapter{
           System.out.println("select shape: " + temps.getName());
           temps.setAppearance(app);
 
-          try {
-            Connection cnn = new Connection();
-            cnn.Send("127.0.0.1",60000,"test dev name: " + temps.getName()+" action: " + (e.getButton()==1?"on":"off"));
-            cnn.CloseClient();
-          }
-          catch (IOException e1) {
-                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-          }
+         // try {
+            //Connection cnn = new Connection();
+           // cnn.Send("127.0.0.1",60000,"test dev name: " + temps.getName()+" action: " + (e.getButton()==1?"on":"off"));
+           // cnn.CloseClient();
+        //  }
+        //  catch (IOException e1) {
+        //        e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        //  }
 
 //        canvas3D.repaint();
         }

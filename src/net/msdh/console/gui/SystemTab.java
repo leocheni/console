@@ -5,10 +5,10 @@ import com.thetransactioncompany.jsonrpc2.JSONRPC2ParseException;
 import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
-import net.msdh.console.Settings.Settings;
-import net.msdh.console.base.Command;
-import net.msdh.console.net.Connection;
-import net.msdh.console.utils.Log;
+import net.msdh.kernel.base.Command;
+import net.msdh.kernel.net.NetClient;
+import net.msdh.kernel.settings.Settings;
+import net.msdh.kernel.utils.Log;
 
 import javax.imageio.ImageIO;
 import javax.imageio.stream.FileImageInputStream;
@@ -18,7 +18,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.security.PrivateKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,20 +35,16 @@ public class SystemTab extends JPanel {
 
     public SystemTab() throws HeadlessException {
       super(new GridLayout(3,4));
-      Connection connection = new Connection();
+      NetClient nc = new NetClient();
       coreIP = Settings.getInstance().getCoreAdress();
       corePort = Settings.getInstance().getCorePort();
       try{
         Map<String,Object> params = new HashMap<String, Object>();
         params.put("action","show");
-        connection.Send(coreIP,corePort,new Command("host",params,1).toJson());
+        nc.Send(coreIP, corePort, new Command("host", params, 1).toJson());
+        String answer = nc.Read();
 
-        String answer = connection.ReadClient();
-       //  String answer = "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":[{\"name\":\"core\"}]}";
-
-        //String resultString=null;
-        JSONRPC2Response respIn = null;
-        respIn = JSONRPC2Response.parse(answer);
+        JSONRPC2Response respIn = JSONRPC2Response.parse(answer);
 
         if(respIn.indicatesSuccess()) {
           if(respIn.getResult() instanceof JSONArray){
@@ -76,40 +71,40 @@ public class SystemTab extends JPanel {
 
                 hostView[i].addActionListener(new ActionListener() {
                   public void actionPerformed(ActionEvent e) {
-                    Connection connection = new Connection();
+                    NetClient nc = new NetClient();
                     Map<String,Object> params = new HashMap<String, Object>();
                     params.put("action","show");
                     params.put("item",((JButton)e.getSource()).getText());
                     try {
-                        connection.Send(coreIP, corePort, new Command("host", params, 1).toJson());
-                        String answer = connection.ReadClient();
-                        System.out.println(answer);
-                        connection.CloseClient();
+                        nc.Send(coreIP, corePort, new Command("host", params, 1).toJson());
+                        String answer = nc.Read();
+                        //System.out.println(answer);
+                        JOptionPane.showMessageDialog(null,View.Responce(answer),"Output",JOptionPane.PLAIN_MESSAGE);
+                        nc.Close();
                     }
                     catch (IOException e1) {
-                        e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                      Log.getInstance().E("Console.SyatemTab",e1.getMessage());
+                    }
+                    catch (JSONRPC2ParseException e1) {
+                      Log.getInstance().E("Console.SystemTab",e1.getMessage());
                     }
                   }
                 });
 
                 this.add(hostView[i]);
-              //for(Map.Entry<String,Object> entry : ((JSONObject) r).entrySet()){
-             //   resultString = resultString + entry.getKey()+":"+entry.getValue()+"\r\n";
-             //   hostView[]
-             // }
             }
 		  }
         }
 	    else {
  		  JSONRPC2Error err = respIn.getError();
-          Log.getInstance().E("Console::Load",err.getMessage());
+          Log.getInstance().E("Console.SystemTab",err.getMessage());
           //Display.getInstance().SetConsoleLine(2,err.getCode()+err.getMessage(), 'i');
 	    }
 //        Display.getInstance().SetConsoleLine(2, View.Command(answer), 'i');
-        connection.CloseClient();
+        nc.Close();
       }
       catch(IOException e){
-        Log.getInstance().E("Console::Load",e.getMessage());
+        Log.getInstance().E("Console.SystemTab",e.getMessage());
 
         JLabel errLabel = new JLabel("", JLabel.CENTER);
         errLabel.setText(e.getMessage());
@@ -117,14 +112,9 @@ public class SystemTab extends JPanel {
         this.add(errLabel);
         //Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'i');
       }
-    catch (JSONRPC2ParseException e) {
-      Log.getInstance().E("Console::Loads",e.getMessage());
-      //Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'i');
+      catch (JSONRPC2ParseException e) {
+        Log.getInstance().E("Console.SystemTab",e.getMessage());
+        //Display.getInstance().SetConsoleLine(2, "Console::Load " + e.getMessage(), 'i');
+      }
     }
-
-
-    }
-
-
-
 }

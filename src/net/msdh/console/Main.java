@@ -1,8 +1,8 @@
 package net.msdh.console;
 
-import net.msdh.console.Settings.Settings;
+import net.msdh.kernel.settings.Settings;
 import net.msdh.console.gui.Display;
-import net.msdh.console.utils.Log;
+import net.msdh.kernel.utils.Log;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -18,7 +18,6 @@ public class Main {
   public static void main(String[] argv) {
     try {
 
-      ///todo переделать все на NetClient NetServer
       System.out.println("start");
 
       Log.getInstance().setLevel("DEBUG");

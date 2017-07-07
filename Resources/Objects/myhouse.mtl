@@ -1,0 +1,372 @@
+# FILE:myhouse_v4.2i1.obj
+newmtl WOOD-WALNUT_SHINY
+Ka 0.0736654 0.0283606 0.0105136
+Kd 0.251329 0.0967596 0.03587
+Ks 0.465791 0.377606 0.315816
+illum 2
+Ns 15
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\myhouse_v4.2_3DHome_Текстура\Кирпичбелый.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\myhouse_v4.2_3DHome_Текстура\Кирпичбелый.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\myhouse_v4.2_3DHome_Текстура\Кирпичбелый.jpg
+newmtl GLASS
+Ka 0.464424 0.602634 0.540169
+Kd 0.0580529 0.0753292 0.0675212
+Ks 1 1 1
+illum 2
+d 0.12
+Ns 80
+newmtl WOOD-WALNUT
+Ka 0.259995 0.100096 0.0371069
+Kd 0.246996 0.0950913 0.0352515
+Ks 0.098558 0.0778874 0.0677295
+illum 2
+Ns 3.4
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Орех.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Орех.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Орех.jpg
+newmtl WOOD-PINE_SHINY
+Ka 0.80961 0.63297 0.380067
+Kd 0.578293 0.452122 0.271476
+Ks 0.746304 0.597757 0.37837
+illum 2
+Ns 15
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Сосна.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Сосна.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Сосна.jpg
+newmtl METAL-IRON
+Ka 0.237089 0.245927 0.265287
+Kd 0.207453 0.215186 0.232126
+Ks 0 0 0
+illum 2
+Ns 4
+newmtl METAL-ALUMINIUM
+Ka 0.899414 0.86345 0.86345
+Kd 0.275331 0.264321 0.264321
+Ks 0.544738 0.544738 0.544738
+illum 2
+Ns 7.8
+newmtl METAL-STAINLESS_STEEL
+Ka 0.798197 0.790123 0.806257
+Kd 0.285671 0.282781 0.288555
+Ks 0.921878 0.921878 0.921878
+illum 2
+Ns 18
+newmtl MISC-EVERGREEN
+Ka 0.0316777 0.20932 0.0732616
+Kd 0.0501564 0.331424 0.115998
+Ks 0 0 0
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Трава1.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Трава1.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Трава1.jpg
+newmtl SURFACE-CONCRETE
+Ka 0.337432 0.339605 0.30164
+Kd 0.379611 0.382055 0.339345
+Ks 0.0231785 0.0226688 0.0198848
+illum 2
+Ns 1
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Бетон.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Бетон.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Бетон.jpg
+newmtl WOOD-PINE
+Ka 0.771057 0.602829 0.361968
+Kd 0.713227 0.557617 0.334821
+Ks 0.0995071 0.0797009 0.0504494
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Дубтемный.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Дубтемный.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Дубтемный.jpg
+newmtl KRASKA-01
+Ka 1 1 1
+Kd 0.81 0.81 0.81
+Ks 0.158401 0.158401 0.16
+illum 2
+d 0.45
+Ns 0.88
+newmtl CONCRETE
+Ka 0.337432 0.339605 0.30164
+Kd 0.379611 0.382055 0.339345
+Ks 0.0231785 0.0226688 0.0198848
+illum 2
+Ns 1
+newmtl SURFACE-PLASTIC_LAMINATE
+Ka 0.58 0.553237 0.512367
+Kd 0.66 0.629545 0.583038
+Ks 0.5 0.489052 0.484192
+illum 2
+Ns 3.8
+newmtl GDLM14_MAT_5
+Ka 0 0 0
+Kd 0.802667 0.728471 0.600314
+Ks 0 0 0
+illum 2
+Ns 70
+newmtl GDLM15_MAT_10
+Ka 0 0 0
+Kd 0 0 0
+Ks 0.358902 0.252863 0.150902
+illum 2
+Ns 85
+newmtl GDLM16_MAT_3
+Ka 0 0 0
+Kd 0.00952941 0.00741176 0.00741176
+Ks 0 0 0
+illum 2
+Ns 70
+newmtl GDLM17_MAT_2
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+illum 2
+Ns 100
+newmtl GDLM18_MAT_1
+Ka 0 0 0
+Kd 0.00219608 0.00141176 0.00141176
+Ks 0 0 0
+illum 2
+Ns 100
+newmtl GDLM19_MAT_6
+Ka 0 0 0
+Kd 0.00952941 0.00741176 0.00741176
+Ks 0 0 0
+illum 2
+Ns 70
+newmtl GDLM20_MAT_4
+Ka 0 0 0
+Kd 0.114667 0.114667 0.114667
+Ks 0 0 0
+illum 2
+Ns 100
+newmtl GDLM21_MW
+Ka 0 0 0
+Kd 0.822235 0.743765 0.620941
+Ks 0 0 0
+illum 2
+Ns 89
+newmtl GDLM22_MAT_9
+Ka 0 0 0
+Kd 0 0 0
+Ks 0.286118 0.353176 0.283882
+illum 2
+d 0
+Ns 100
+newmtl GDLM23_MSTANDARD_3
+Ka 0 0 0
+Kd 0.24902 0.24902 0.24902
+Ks 0 0 0
+illum 2
+Ns 100
+newmtl METAL-ZINC
+Ka 0.531283 0.538045 0.543429
+Kd 0.431667 0.437162 0.441536
+Ks 0.464968 0.464968 0.464968
+illum 2
+Ns 11
+newmtl TIKKURILA_F309_-_SURFACE-WHITE
+Ka 0.968627 0.941176 0.901961
+Kd 0.852392 0.828235 0.793725
+Ks 0 0 0
+illum 2
+Ns 0
+newmtl METAL-CHROME
+Ka 0.92493 0.92493 0.92493
+Kd 0.476768 0.476768 0.476768
+Ks 0.96 0.96 0.96
+illum 2
+Ns 80
+newmtl METAL-NICKEL
+Ka 0.892969 0.867768 0.840906
+Kd 0.496094 0.482094 0.46717
+Ks 0.51 0.508872 0.491611
+illum 2
+Ns 5.2
+newmtl SURFACE-WHITE
+Ka 0.14 0.14 0.14
+Kd 0.51 0.51 0.51
+Ks 0.5 0.5 0.5
+illum 2
+Ns 9
+#map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+#map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+#map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+newmtl C09
+Ka 0.387843 0.286667 0.236078
+Kd 0.365294 0.27 0.222353
+Ks 0.0891005 0.0891005 0.09
+illum 2
+Ns 2.2
+newmtl GLASS-LAMP
+Ka 0.13125 0.130254 0.109407
+Kd 0.831248 0.824942 0.692912
+Ks 0.28 0.28 0.28
+illum 2
+Ns 80
+newmtl MISC-ICE
+Ka 0.572944 0.668599 0.700065
+Kd 0.0674052 0.0786587 0.0823606
+Ks 1 1 1
+illum 2
+d 0.32
+Ns 30
+newmtl PAVING-ASPHALT_SMOOTH
+Ka 0.1454 0.1454 0.1454
+Kd 0.1454 0.1454 0.1454
+Ks 0.0913024 0.0913024 0.0913024
+illum 2
+Ns 4.2
+newmtl WOOD-DECK
+Ka 0.80961 0.63297 0.380067
+Kd 0.578293 0.452122 0.271476
+Ks 0.746304 0.597757 0.37837
+illum 2
+Ns 15
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Дерево4.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Дерево4.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Дерево4.jpg
+newmtl MISC-WATER
+Ka 0.577224 0.700065 0.671336
+Kd 0.0679088 0.0823606 0.0789807
+Ks 1 1 1
+illum 2
+d 0.32
+Ns 60
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Вода2.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Вода2.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Вода2.jpg
+newmtl MISC-GRASS
+Ka 0.123818 0.333541 0.0974685
+Kd 0.196045 0.528106 0.154325
+Ks 0 0 0
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Трава2.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Трава2.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Трава2.jpg
+newmtl SURFACE-PAINT_FLAT
+Ka 0.511803 0.0316493 0.0137029
+Kd 0.710838 0.0439574 0.0190318
+Ks 0.1 0.08 0.08
+illum 2
+Ns 1
+newmtl EARTH
+Ka 0.169212 0.0802454 0.0375201
+Kd 0.264393 0.125383 0.0586252
+Ks 0 0 0
+illum 2
+Ns 0
+newmtl BROWN
+Ka 0.211765 0.105882 0.105882
+Kd 0.211765 0.105882 0.105882
+Ks 0.158824 0.0784314 0.0784314
+illum 2
+Ns 0
+newmtl GDLM39_MYLAMP
+Ka 0.15 0.15 0.15
+Kd 0.95 0.95 0.95
+Ks 0.9 0.9 0.9
+illum 2
+Ns 80
+newmtl SURFACE-PLASTER_ROUGH
+Ka 0.468415 0.461396 0.415009
+Kd 0.526967 0.519071 0.466885
+Ks 0.0338819 0.0335691 0.0317128
+illum 2
+Ns 1
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Плиткакерамическаябелая1.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Плиткакерамическаябелая1.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Плиткакерамическаябелая1.jpg
+newmtl WHITE-BRICK
+Ka 0.88 0.88 0.88
+Kd 0.9 0.9 0.9
+Ks 0.0696104 0.0393413 0.0292557
+illum 2
+Ns 1
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичбелый.jpg
+newmtl SURFACE-FABRIC
+Ka 0.235529 0.394588 0.468
+Kd 0.271765 0.455294 0.54
+Ks 0 0 0
+illum 2
+Ns 1
+#map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Ткань2.jpg
+#map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Ткань2.jpg
+#map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Ткань2.jpg
+newmtl FLOORING-CARPET_MY
+Ka 0 0.118588 0.239294
+Kd 0 0.219608 0.443137
+Ks 0 0 0
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Коверсерый.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Коверсерый.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Коверсерый.jpg
+newmtl STONE
+Ka 0.573176 0.553412 0.540235
+Kd 0.491294 0.474353 0.463059
+Ks 0.0874998 0.0841505 0.0669978
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Камень1.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Камень1.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Камень1.jpg
+newmtl STONE-GRANITE_ROUGH
+Ka 0.3355 0.279194 0.211604
+Kd 0.2013 0.167517 0.126963
+Ks 0.206546 0.178901 0.12095
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Гранит1.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Гранит1.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Гранит1.jpg
+newmtl ROOF-TILE_1
+Ka 0.54927 0.250132 0.0845356
+Kd 0.749004 0.341089 0.115276
+Ks 0.178653 0.0744823 0.0467414
+illum 2
+Ns 5
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Крыша3.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Крыша3.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Крыша3.jpg
+newmtl BRICK-FACE
+Ka 0.776403 0.352913 0.19774
+Kd 0.794049 0.360934 0.202234
+Ks 0.0696104 0.0393413 0.0292557
+illum 2
+Ns 1
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичновый2.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичновый2.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Кирпичновый2.jpg
+newmtl METAL-BRONZE
+Ka 0.525498 0.19615 0.0717281
+Kd 0.233555 0.0871778 0.0318791
+Ks 0.579313 0.334617 0.242166
+illum 2
+Ns 18
+newmtl GRASS
+Ka 0.123818 0.333541 0.0974685
+Kd 0.196045 0.528106 0.154325
+Ks 0 0 0
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Трава4.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Трава4.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Трава4.jpg
+newmtl WOOD
+Ka 0.669993 0.464973 0.21442
+Kd 0.669993 0.464973 0.21442
+Ks 0 0 0
+illum 2
+Ns 0
+map_Ka F:\dev\projects\lab\dh\console\Resources\Objects\Дерево3.jpg
+map_Kd F:\dev\projects\lab\dh\console\Resources\Objects\Дерево3.jpg
+map_Ks F:\dev\projects\lab\dh\console\Resources\Objects\Дерево3.jpg
+newmtl GDLM51_SHADOW_MATERIAL
+Ka 0.228885 0.228885 0.228885
+Kd 0.228885 0.228885 0.228885
+Ks 0 0 0
+illum 2
+Ns 0

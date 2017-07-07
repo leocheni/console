@@ -1,0 +1,4 @@
+07.07.2017 15:56:39 INFO::CONSOLE.Main::--------------Start------------
+07.07.2017 15:56:40 ERROR::Console.SystemTab::Connection refused: connect
+07.07.2017 15:56:51 ERROR::Console::Load::Connection refused: connect
+07.07.2017 15:56:51 INFO::CONSOLE.Main::Window created

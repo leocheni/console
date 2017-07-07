@@ -1,13 +1,14 @@
 package net.msdh.console;
 
 import com.thetransactioncompany.jsonrpc2.JSONRPC2ParseException;
-import net.msdh.console.Settings.Settings;
-import net.msdh.console.base.Command;
-import net.msdh.console.base.Queue;
+import net.msdh.kernel.net.NetClient;
+import net.msdh.kernel.net.NetServer;
+import net.msdh.kernel.settings.Settings;
+import net.msdh.kernel.base.Command;
+import net.msdh.kernel.base.Queue;
 import net.msdh.console.gui.Display;
 import net.msdh.console.gui.View;
-import net.msdh.console.net.Connection;
-import net.msdh.console.utils.Log;
+import net.msdh.kernel.utils.Log;
 import net.msdh.jtconsole.ConsoleAction;
 
 import javax.swing.*;
@@ -28,17 +29,21 @@ import java.util.Map;
 public class Console {
   private ConsoleReciver consoleReciver;
   Queue queue;
-  Connection connect;
-  private String cmdLine;
+  //Connection connect;
+  //NetServer ns = new NetServer();
+  NetClient nc;
+  //private String cmdLine;
   private String coreIP;
   private int corePort;
 
   public Console(){
     coreIP = Settings.getInstance().getCoreAdress();
     corePort = Settings.getInstance().getCorePort();
-    connect = new Connection();
+   // connect = new Connection();
+
+    nc = new NetClient();
     queue = new Queue();
-    cmdLine="";
+    //cmdLine="";
   }
 
 
@@ -46,15 +51,15 @@ public class Console {
         @Override
         public void onLine(String line) {
 
-         // System.out.print("Console::consoleAction");
           String answer;
           try{
-            queue.cmdParser(line); ///todo переделать на объекты из ядра
+            queue.cmdParser(line);
+            Command cmd = queue.getCommand();
 
-            if(cmdValidator(queue.getCommand())){
+            if(cmdValidator(cmd)){
               sendStatus();
-              connect.Send(coreIP, corePort,queue.getCommand().toJson());
-              answer = connect.ReadClient();
+              nc.Send(coreIP, corePort, cmd.toJson());
+              answer = nc.Read();
               Display.getInstance().SetConsoleLine(0, answer, 'i');
               Display.getInstance().SetConsoleLine(0, View.Responce(answer), 'i');
 
@@ -95,10 +100,10 @@ public class Console {
     params.put("port","60001");
 
     try{
-      connect.Send(coreIP,corePort,new Command("mod",params,1).toJson());
+      nc.Send(coreIP,corePort,new Command("mod",params,1).toJson());
       //String answer = connect.ReadClient();
       //Display.getInstance().SetConsoleLine(2, View.Responce(answer), 'i');
-      connect.CloseClient();
+      nc.Close();
     }
     catch(IOException e){
       Log.getInstance().E("Console::Load",e.getMessage());
@@ -278,7 +283,8 @@ public class Console {
     params.put("port","60001");
 
     try {
-      connect.Send(coreIP,corePort,new Command("mod",params,1).toJson());
+      nc.Send(coreIP,corePort,new Command("mod",params,1).toJson());
+      nc.Close();
     }
     catch (IOException e) {
       Log.getInstance().E("Console::Unload",e.getMessage());
@@ -295,15 +301,11 @@ public class Console {
     params.put("value","up");
 
     try {
-      connect.Send(coreIP,corePort,new Command("mod",params,1).toJson());
-      connect.CloseClient();
+      nc.Send(coreIP,corePort,new Command("mod",params,1).toJson());
+      nc.Close();
     }
     catch (IOException e) {
       Log.getInstance().E("Console.SendStatus: ",e.getMessage());
     }
-
-
   }
-
-
 }

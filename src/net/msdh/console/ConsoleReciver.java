@@ -1,12 +1,12 @@
 package net.msdh.console;
 
 import com.thetransactioncompany.jsonrpc2.JSONRPC2ParseException;
-import net.msdh.console.base.Command;
-import net.msdh.console.base.Queue;
+import net.msdh.kernel.base.Command;
+import net.msdh.kernel.base.Queue;
 import net.msdh.console.gui.Display;
 import net.msdh.console.gui.View;
-import net.msdh.console.net.Connection;
-import net.msdh.console.utils.Log;
+import net.msdh.kernel.net.NetServer;
+import net.msdh.kernel.utils.Log;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,17 +31,18 @@ public class ConsoleReciver implements Runnable{
 
     Display.getInstance().SetConsoleLine(2,"ConsoleReciver start",'i');
 
-    Connection p = new Connection();
-   // Queue q = new Queue();
+    //Connection p = new Connection();
+    NetServer ns = new NetServer();
+
     try{
-      p.Listen(60001);
+      ns.Listen(60001);
 
       while(running) {  // main accept() loop
         //Command c;
-        p.Accept();
+        ns.Accept();
         String line;
         try{
-          line = p.ReadServer();
+          line = ns.Read();
 
           try{
             Display.getInstance().SetConsoleLine(2, View.Request(line),'i');
@@ -79,9 +80,9 @@ public class ConsoleReciver implements Runnable{
           Log.getInstance().E("CONSOLE::ConsoleRecv","Error: " + ce.getMessage());
           //Display::getInstance().SetLine(INFO,"Error: " + ce.GetMessage(),'e');
         }
-        p.CloseServerAccept();
+        ns.CloseAccept();
       }//while
-    p.CloseServer();
+    ns.Close();
   }
   catch(Exception e){
     Log.getInstance().E("CONSOLE::ConsoleRecv", e.getMessage());

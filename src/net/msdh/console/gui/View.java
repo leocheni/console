@@ -23,8 +23,6 @@ public class View {
 
     }
 
-    ///todo реализовать обработку респронсе и реквесит
-
     static public String Responce(String c) throws JSONRPC2ParseException {
       String resultString="";
       JSONRPC2Response respIn;

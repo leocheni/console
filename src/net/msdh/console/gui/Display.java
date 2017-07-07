@@ -1,8 +1,8 @@
 package net.msdh.console.gui;
 
-import net.msdh.jtconsole.ConsoleAction;
 import net.msdh.console.utils.Utils;
-import sun.misc.JavaAWTAccess;
+import net.msdh.h3d.Home3D;
+import net.msdh.jtconsole.ConsoleAction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -178,5 +178,7 @@ public class Display extends JFrame{
 
   }
 
-
+  public Home3D getHome3D(){
+    return managementTab.getHome3D();
+  }
 }
